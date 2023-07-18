@@ -21,15 +21,15 @@ async function loadPosts() {
     localStorage.setItem('posts', JSON.stringify(posts));
 }
 
-async function getPostData(refresh=false) {
-    if (!localStorage.getItem('posts') || refresh) 
+async function getPostData() {
+    if (!localStorage.getItem('posts')) 
         await loadPosts();
 
     return JSON.parse(localStorage.getItem('posts'));
 }
 
-async function getUser(id, refresh=false) {
-    if (!localStorage.getItem('users') || refresh)
+async function getUser(id) {
+    if (!localStorage.getItem('users'))
         await loadUsers();
 
     const users = JSON.parse(localStorage.getItem('users'));

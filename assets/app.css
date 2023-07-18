@@ -36,12 +36,9 @@ h1 {
     margin: 1rem 0;
     padding: 1rem;
     box-shadow: 0px 0px 20px 5px #0001;
+    display: grid;
+    gap: 1rem;
 }
-
-.post__author {
-    margin-bottom: .5rem;
-}
-
 
 .post__delete {
     border: none;
