@@ -1,2 +1,2 @@
 # JQuery Blog Demo
-A static blgo-style site for me oto practice JQuery
+A static blog-style site for me to practice JQuery.
