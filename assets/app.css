@@ -34,7 +34,7 @@ h1 {
     width: clamp(10rem, 40rem, 100%);
 }
 
-.panel__posts {
+.posts {
     display: grid;
     gap: 3rem;
 }

@@ -64,7 +64,7 @@ async function handlePostSubmition() {
     const postBody = formData.get('body');
     const postId = posts[posts.length - 1].id;
     const post = makePost(postId, postTitle, postBody, "You");
-    $(".panel__posts").prepend(post);
+    $(".posts").prepend(post);
 
     await savePost("You", postTitle, postBody, postId);
 }
@@ -84,13 +84,14 @@ function makePost(author, title, body, id) {
 
 function clearPosts() {
     $('.post').each((i, el) => el.remove());
+    $('.posts').text('Loading...');
     localStorage.clear('posts');
     localStorage.clear('users');
 }
 
 function renderPost(author, title, body, id) {
     const postHtml = makePost(author, title, body, id);
-    $('.panel__posts').prepend(postHtml);
+    $('.posts').prepend(postHtml);
 
     const deleteId = `delete-post-${ id }`;
     $(`#${ deleteId }`).on("click", async () => {
@@ -109,6 +110,7 @@ function renderPost(author, title, body, id) {
 }
 
 async function renderPostData(posts) {
+    $('.posts').text('');
     posts.map((post, i) => {
         if (post.author) {
             renderPost(post.author, post.title, post.body, post.id);
